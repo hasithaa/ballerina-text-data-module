@@ -28,15 +28,15 @@ public type RowRecord record {|
 |};
 
 # Represent a CSV record containing row as an array of records.
-type RecordList Row[];
+public type RecordList Row[];
 
 // As a table.
 
 # Represent a CSV table containing row as a table.
-type Table table<RowRecord>;
+public type Table table<RowRecord>;
 
 // Any CSV Format
-type CsvFormat Csv|RecordList|Table;
+public type CsvFormat Csv|RecordList|Table;
 
 
 // Proposed Funnctions
@@ -65,5 +65,5 @@ public function toString(CsvFormat csv, Options otions) returns string {
 }
 
 public function main(string s) returns error? {
-    Csv csv = check fromString(s, {header : {headerRows : 1, headerType : CsvRow}});
+    Csv csv = check fromString(s, {header : {headerRows : 1, headerType : Row}});
 }
