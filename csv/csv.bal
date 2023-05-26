@@ -28,7 +28,7 @@ public type RowRecord record {|
 |};
 
 # Represent a CSV record containing row as an array of records.
-public type RecordList Row[];
+public type RecordList RowRecord[];
 
 // As a table.
 
